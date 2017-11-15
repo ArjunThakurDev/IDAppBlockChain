@@ -27,7 +27,7 @@ export class UserprofileComponent implements OnInit {
     console.log(this.data);
     
     if (!this.data) { return; }
-   this.userService.getKeysForHashing(JSON.stringify(this.data))
+   this.userService.getKeysForHashing(this.data)
    //this.http.post(this.hashServiceUrl, this.data.toString(), this.httpOptions)
       .subscribe(user => {
         console.log(user);
