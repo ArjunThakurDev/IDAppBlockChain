@@ -17,8 +17,6 @@ export class UserprofileComponent implements OnInit {
 
 
   add(name: string): void {
-    name = name.trim();
-    if (!name) { return; }
     this.userService.getKeysForHashing(this.userDetails)
       .subscribe(user => {
         console.log(user);
