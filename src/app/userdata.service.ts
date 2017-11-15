@@ -25,6 +25,7 @@ export class UserdataService {
   }
 
   getKeysForHashing(user: string) {
+    console.log(user);
     return this.http.post(this.hashServiceUrl, user, httpOptions)
       
   }

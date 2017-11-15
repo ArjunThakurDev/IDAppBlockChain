@@ -24,10 +24,10 @@ export class UserprofileComponent implements OnInit {
     this.data.push(
       { firstname: frstname, lastname: lstname, biometric: biom, mob: mob }
     )
-    console.log(frstname);
+    console.log(this.data);
     
     if (!this.data) { return; }
-   this.userService.getKeysForHashing(this.data.toString())
+   this.userService.getKeysForHashing(JSON.stringify(this.data))
    //this.http.post(this.hashServiceUrl, this.data.toString(), this.httpOptions)
       .subscribe(user => {
         console.log(user);
