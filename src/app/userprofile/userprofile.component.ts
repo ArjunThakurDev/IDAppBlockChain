@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserdataService } from '../userdata.service';
 
 @Component({
   selector: 'app-userprofile',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./userprofile.component.css']
 })
 export class UserprofileComponent implements OnInit {
-
-  constructor() { }
+  private userDetails;
+  constructor(private userService: UserdataService) { }
 
   ngOnInit() {
+  }
+
+
+
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.userService.getKeysForHashing(this.userDetails)
+      .subscribe(user => {
+        console.log(user);
+      });
   }
 
 }
