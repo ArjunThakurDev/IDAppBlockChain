@@ -16,7 +16,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
     BrowserModule,
     FormsModule
   ],
-  providers: [UserdataService,HttpClient,HttpHeaders],
+  providers: [UserdataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

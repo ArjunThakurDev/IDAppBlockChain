@@ -8,7 +8,4 @@ import {UserprofileComponent} from './userprofile/userprofile.component'
 export class AppComponent {
   title = 'app';
   
-
- 
-
 }
