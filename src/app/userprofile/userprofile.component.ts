@@ -8,16 +8,25 @@ import { UserdataService } from '../userdata.service';
 })
 export class UserprofileComponent implements OnInit {
   private userDetails;
+  data: any[];
+
   constructor(private userService: UserdataService) { }
 
   ngOnInit() {
   }
 
+  public getData() {
+
+  }
+
+  public sendConsent(frstname, lstname, biom, mob): void {
+    this.data.push(
+      { firstname: frstname, lastname: lstname, biometric: biom, mob: mob }
+    )
 
 
-
-  add(name: string): void {
-    this.userService.getKeysForHashing(this.userDetails)
+    if (!this.data) { return; }
+    this.userService.getKeysForHashing(this.data.toString())
       .subscribe(user => {
         console.log(user);
       });
