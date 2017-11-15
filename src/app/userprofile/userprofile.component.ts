@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class UserprofileComponent implements OnInit {
   private userDetails;
-  data: any[]=[];
+  data: any;
 
   constructor(private userService: UserdataService) { }
 
@@ -21,14 +21,13 @@ export class UserprofileComponent implements OnInit {
   }
 
   public sendConsent(frstname, lstname, biom, mob) {
-    this.data.push(
-      { firstname: frstname, lastname: lstname, biometric: biom, mob: mob }
-    )
+    this.data ={ firstname: frstname, lastname: lstname, biometric: biom, mob: mob };
+
     console.log(this.data);
-    
+
     if (!this.data) { return; }
-   this.userService.getKeysForHashing(JSON.stringify(this.data))
-   //this.http.post(this.hashServiceUrl, this.data.toString(), this.httpOptions)
+    this.userService.getKeysForHashing(JSON.stringify(this.data))
+      //this.http.post(this.hashServiceUrl, this.data.toString(), this.httpOptions)
       .subscribe(user => {
         console.log(user);
       });
