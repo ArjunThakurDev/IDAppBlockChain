@@ -27,16 +27,18 @@ export class UserdataService {
 
   }
 
-  getKeysForHashing(user: string) {
-    return this.http.post<string>(this.hashServiceUrl, user, httpOptions).pipe(
-      tap((respUser: string) => console.log('Created Key for ' + respUser)),
-      catchError(this.handleError('addHero'))
-    );
-
-
+  public getKeysForHashing(user: string) {
+    return this.http.post(this.hashServiceUrl, user, httpOptions)
+    
   }
-
-
+  private extractData(res: Response) {
+    let body = res.json();
+          console.log(body);
+      }
+  private handleErrorObservable (error: Response | any) {
+    console.error(error.message || error);
+    return Observable.throw(error.message || error);
+      }
   /*   addHero(hero: Hero): Observable<Hero> {
       return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
         tap((hero: Hero) => this.log(`added hero w/ id=${hero.id}`)),
