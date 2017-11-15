@@ -20,7 +20,7 @@ export class UserprofileComponent implements OnInit {
 
   }
 
-  public sendConsent(frstname, lstname, biom, mob): void {
+  public sendConsent(frstname, lstname, biom, mob) {
     this.data.push(
       { firstname: frstname, lastname: lstname, biometric: biom, mob: mob }
     )
