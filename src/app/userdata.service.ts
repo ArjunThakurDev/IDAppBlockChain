@@ -15,7 +15,7 @@ export class UserdataService {
   private usepassword;
 
 
-  hashServiceUrl = 'http://84cdac9f.ngrok.io/BlockChainCorePublisher/rest/getKeysForHashing';
+  hashServiceUrl = 'http://93bde717.ngrok.io/BlockChainCorePublisher/rest/getKeysForHashing';
   BlockServerUrl = '';
 
 

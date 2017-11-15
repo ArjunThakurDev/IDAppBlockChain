@@ -8,14 +8,7 @@ import {UserprofileComponent} from './userprofile/userprofile.component'
 export class AppComponent {
   title = 'app';
   
-  showfirstname:any;
 
-  constructor() {
-    
-  }
-
-  public getData() {
-    
-  }
+ 
 
 }
