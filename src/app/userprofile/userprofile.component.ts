@@ -21,7 +21,7 @@ export class UserprofileComponent implements OnInit {
   }
 
   public sendConsent(frstname, lstname, biom, mob) {
-    this.data ={ firstname: frstname, lastname: lstname, biometric: biom, mob: mob };
+    this.data = { firstname: frstname, lastname: lstname, biometric: biom, mob: mob };
 
     console.log(this.data);
 
