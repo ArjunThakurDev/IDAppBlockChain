@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class UserprofileComponent implements OnInit {
   private userDetails;
-  data: any[];
+  data: any[]=[];
 
   constructor(private userService: UserdataService) { }
 
