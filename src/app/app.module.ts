@@ -5,7 +5,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import {UserdataService} from './userdata.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {HttpClient, HttpHeaders,HttpClientModule  } from '@angular/common/http';
+
+import { HttpModule } from '@angular/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +16,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    HttpModule
   ],
   providers: [UserdataService],
   bootstrap: [AppComponent]
